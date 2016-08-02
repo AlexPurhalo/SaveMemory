@@ -6,5 +6,8 @@
     "name": "Purkhalo Alexander",
     "email": "alexpurhalo@gmail.com",
     "url": "https://github.com/AlexPurhalo/SaveMemory"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
   }
 }
