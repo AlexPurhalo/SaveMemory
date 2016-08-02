@@ -1,12 +1,15 @@
 // Node modules import
 import mongoose from 'mongoose';
 
+// Server configuration import
+import config from '../../etc/config.json';
+
 // Application module import
 import '../models/Note'
 
 // Connect configuration function
 export function setUpConnection() {
-    mongoose.connect('mongodb://localhost/notes');
+    mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`);
 }
 
 // Server actions
