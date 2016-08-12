@@ -6,9 +6,10 @@ import { Router, Route, browserHistory } from 'react-router';
 
 import App from './components/app';
 import Notes from './components/notes-page';
+import Async from './middleweares/async';
 import reducers from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(Async)(createStore);
 
 ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>

@@ -1,6 +1,7 @@
 // Node modules import
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 // Server configuration import
 import { serverPort } from '../etc/config.json';
@@ -15,6 +16,9 @@ db.setUpConnection();
 const app = express();
 
 app.use(bodyParser.json());
+
+// Clean Up troubles between different hosts
+app.use(cors({ origin: '*'}));
 
 app.get('/notes', (req, res) => {
     db.listNotes().then(data => res.send(data));
