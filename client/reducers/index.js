@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
+import notesReducer from './notes';
+
 const rootReducer = combineReducers({
-   state: (state = {}) => state
+    notes: notesReducer
 });
 
 export default rootReducer;

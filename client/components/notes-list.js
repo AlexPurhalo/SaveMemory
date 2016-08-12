@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Note from './note'
+import * as actions from '../actions';
+
+import Note from './note';
 
 export default class NotesList extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            notes: [
-                {id: 1, title: 'first title', text: 'first note text'},
-                {id: 2, title: 'second title', text: 'second note text'}
-            ]
-        };
-        console.log(this.state.notes)
+    componentWillMount() {
+        this.props.fetchNotes();
     }
+    
     render() {
         return (
             <div>
                 {
-                    this.state.notes.map(note => {
+                    this.props.notes.map(note => {
                         return <Note
                             key={note.id}
                             title={note.title}
@@ -29,3 +25,9 @@ export default class NotesList extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return { notes: state.notes }
+}
+
+export default connect(mapStateToProps, actions)(NotesList);
