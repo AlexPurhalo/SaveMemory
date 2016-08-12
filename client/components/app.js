@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 export default class App extends Component {
     render() {
-        return <h1>App is working</h1>;
+        return (
+          <div>Works</div>
+        );
     }
 }
