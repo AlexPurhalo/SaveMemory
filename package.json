@@ -1,7 +1,7 @@
 {
   "name": "SaveMemory",
   "version": "1.0.0",
-  "description": "Notes application with react and node.js ",
+  "description": "Notes application with react and rails applying",
   "main": "index.js",
   "author": {
     "name": "Purkhalo Alexander",
@@ -9,8 +9,7 @@
     "url": "https://github.com/AlexPurhalo/SaveMemory"
   },
   "scripts": {
-    "dev-s": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js  --port 8090 --host 0.0.0.0",
-    "s": "babel-node server/app.js"	
+    "dev-s": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js  --port 8090 --host 0.0.0.0"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
